@@ -1,5 +1,6 @@
 export interface CurrentWeather {
   temp: number;
+  feelslike: number;
   windspeed: number;
   precipprob: number;
   conditions: string;
