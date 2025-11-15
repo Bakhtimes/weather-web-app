@@ -44,6 +44,7 @@ export const WeatherSearch = ({
               )
           }
         }
+        className='m-2 border-2 w-80'
       >
         Use my current location
       </button>
