@@ -12,11 +12,11 @@ export const WeatherSearch = ({
 }: WeatherSearchProps) => {
   const [searchTerm, setSearchTerm] = useState('');
   return (
-    <div>
+    <div className='w-full max-w-md mx-auto space-y-4'>
       <form onSubmit={(event) => {
             event.preventDefault();
-            onSearch(searchTerm.trim())
-            console.log(`Search input: ${searchTerm.trim()}`)
+            onSearch(searchTerm.trim());
+            console.log(`Search input: ${searchTerm.trim()}`);
           }
         }>
         <input 
@@ -24,7 +24,7 @@ export const WeatherSearch = ({
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder='Enter your city' 
-          className='m-2 border-2 w-80'
+          className='m-2 border-2 pl-2'
         />
       </form>
       <button
@@ -44,7 +44,7 @@ export const WeatherSearch = ({
               )
           }
         }
-        className='m-2 border-2 w-80'
+        className='m-2 border-2 ps-4 pe-4'
       >
         Use my current location
       </button>
