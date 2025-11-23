@@ -3,30 +3,31 @@ import { WeatherSearch } from "./components/WeatherSearch";
 import { useState } from "react";
 import type { WeatherData } from "./types/weather";
 import { CurrentConditions } from "./components/CurrentConditions";
+import { WeatherForecast } from "./components/WeatherForecast";
 export function App() {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   return (
-    <div className="flex justify-center flex-col">
+    <div className="max-w-4xl mx-auto">
       <WeatherSearch 
         onSearch={async (city) => {
-          const data = await getWeatherData(city)
-          setWeatherData(data)
-          await new Promise(resolve => setTimeout(resolve, 300))
-          console.log(weatherData)
+          const data = await getWeatherData(city);
+          console.log(data);
+          setWeatherData(data);
           }
         }
         onGetCurrentLocation={
           async (position) => {
             const { latitude, longitude } = position.coords;
             const data = await getWeatherData(`${latitude},${longitude}`);
+            console.log(data);
             setWeatherData(data);
-            await new Promise(resolve => setTimeout(resolve, 300))
-            console.log(weatherData)
           }
         }
         isLoading={false} 
       />
       {weatherData && <CurrentConditions currentWeather={weatherData.currentConditions} />}
+
+      {weatherData && (<WeatherForecast hourlyForecast={weatherData.hours} />)}
     </div>
   )
 }
