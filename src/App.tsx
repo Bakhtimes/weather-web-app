@@ -7,7 +7,7 @@ import { WeatherForecast } from "./components/WeatherForecast";
 export function App() {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="flex justify-center flex-col bg-white">
       <WeatherSearch 
         onSearch={async (city) => {
           const data = await getWeatherData(city);

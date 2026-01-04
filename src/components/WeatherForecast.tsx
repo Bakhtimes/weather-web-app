@@ -13,7 +13,7 @@ export const WeatherForecast = ({ hourlyForecast }: HourlyForecastProps) => {
   };
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center min-h-screen">
       <p className="m-auto">HourlyForecast</p>
       {first24Hours.map((hour, index) => (
         <div className="border-2 w-md m-auto"> 
