@@ -8,26 +8,25 @@ export function App() {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   return (
     <div className="flex justify-center flex-col bg-white">
-      <WeatherSearch 
+      <WeatherSearch
         onSearch={async (city) => {
           const data = await getWeatherData(city);
           console.log(data);
           setWeatherData(data);
-          }
-        }
-        onGetCurrentLocation={
-          async (position) => {
-            const { latitude, longitude } = position.coords;
-            const data = await getWeatherData(`${latitude},${longitude}`);
-            console.log(data);
-            setWeatherData(data);
-          }
-        }
-        isLoading={false} 
+        }}
+        onGetCurrentLocation={async (position) => {
+          const { latitude, longitude } = position.coords;
+          const data = await getWeatherData(`${latitude},${longitude}`);
+          console.log(data);
+          setWeatherData(data);
+        }}
+        isLoading={false}
       />
-      {weatherData && <CurrentConditions currentWeather={weatherData.currentConditions} />}
+      {weatherData && (
+        <CurrentConditions currentWeather={weatherData.currentConditions} />
+      )}
 
-      {weatherData && (<WeatherForecast hourlyForecast={weatherData.hours} />)}
+      {weatherData && <WeatherForecast hourlyForecast={weatherData.hours} />}
     </div>
-  )
+  );
 }

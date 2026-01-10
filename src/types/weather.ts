@@ -20,4 +20,4 @@ export interface WeatherData {
   currentConditions: CurrentWeather;
   hours: HourlyForecast[];
   location: string;
-} 
+}

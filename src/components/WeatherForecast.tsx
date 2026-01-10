@@ -1,33 +1,30 @@
-import type { HourlyForecast } from "../types/weather"
+import type { HourlyForecast } from "../types/weather";
 
 interface HourlyForecastProps {
-    hourlyForecast: HourlyForecast[];
+  hourlyForecast: HourlyForecast[];
 }
 
 export const WeatherForecast = ({ hourlyForecast }: HourlyForecastProps) => {
   const first24Hours = hourlyForecast.slice(0, 24);
 
   const formatHour = (datetime: string) => {
-    const hour = datetime.split(':')[0];
-    return `${hour}:00`
+    const hour = datetime.split(":")[0];
+    return `${hour}:00`;
   };
 
   return (
     <div className="flex flex-col justify-center min-h-screen">
-      <p className="m-auto">HourlyForecast</p>
+      <p className="m-auto">
+        HourlyForecast
+      </p>
+      
       {first24Hours.map((hour, index) => (
-        <div className="border-2 w-md m-auto"> 
-          <p>
-            {formatHour(hour.datetime)}
-          </p>
-          <p>
-            {Math.round(hour.temp)}°C
-          </p>
-          <p>
-            {hour.conditions}
-          </p>
+        <div className="border-2 w-md m-auto">
+          <p>{formatHour(hour.datetime)}</p>
+          <p>{Math.round(hour.temp)}°C</p>
+          <p>{hour.conditions}</p>
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
