@@ -13,18 +13,20 @@ export const WeatherForecast = ({ hourlyForecast }: HourlyForecastProps) => {
   };
 
   return (
-    <div className="flex flex-col justify-center min-h-screen">
-      <p className="m-auto">
+    <div className="flex flex-col items-center min-h-screen">
+      <p className="">
         HourlyForecast
       </p>
-      
-      {first24Hours.map((hour, index) => (
-        <div className="border-2 w-md m-auto">
-          <p>{formatHour(hour.datetime)}</p>
-          <p>{Math.round(hour.temp)}°C</p>
-          <p>{hour.conditions}</p>
-        </div>
-      ))}
+
+      <div className="flex flex-col items-center gap-3 border-2 p-2 h-80 overflow-auto pr-4">
+        {first24Hours.map((hour) => (
+          <div className="border-2 w-md">
+            <p>{formatHour(hour.datetime)}</p>
+            <p>{Math.round(hour.temp)}°C</p>
+            <p>{hour.conditions}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
