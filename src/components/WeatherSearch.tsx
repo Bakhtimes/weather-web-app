@@ -27,7 +27,7 @@ export const WeatherSearch = ({
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Enter your city"
-          className="border-2 w-full"
+          className="border-2 w-full pl-2 pb-1"
         />
       </form>
       <button
@@ -45,7 +45,7 @@ export const WeatherSearch = ({
             }
           );
         }}
-        className="border-2 w-sm"
+        className="border-2 w-sm p-2"
       >
         Use my current location
       </button>

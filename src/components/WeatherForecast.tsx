@@ -19,8 +19,8 @@ export const WeatherForecast = ({ hourlyForecast }: HourlyForecastProps) => {
       </p>
 
       <div className="flex flex-col items-center gap-3 border-2 p-2 h-80 overflow-auto pr-4">
-        {first24Hours.map((hour) => (
-          <div className="border-2 w-md">
+        {first24Hours.map((hour, index) => (
+          <div key={index} className="border-2 w-md p-2 bg-">
             <p>{formatHour(hour.datetime)}</p>
             <p>{Math.round(hour.temp)}°C</p>
             <p>{hour.conditions}</p>
