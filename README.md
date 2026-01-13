@@ -4,7 +4,7 @@ This is a frontend application created to check current weather conditions and f
 
 Based on: [Weather App Project](https://roadmap.sh/projects/weather-app) 
 Repository: [Weather Web Application](https://github.com/Bakhtimes/weather-web-app)
-Referenced from Repository: [Weather Web Application]((https://github.com/kx4x/Weather-Web))
+Referenced from Repository: [Weather Web Application](https://github.com/kx4x/Weather-Web)
 
 
 
